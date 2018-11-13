@@ -4,6 +4,9 @@ package org.dieschnittstelle.jee.esa.basics;
 import org.dieschnittstelle.jee.esa.basics.annotations.AnnotatedStockItemBuilder;
 import org.dieschnittstelle.jee.esa.basics.annotations.StockItemProxyImpl;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.TypeVariable;
+
 import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
 public class ShowAnnotations {
@@ -29,8 +32,26 @@ public class ShowAnnotations {
 	/*
 	 * UE BAS2 
 	 */
-	private static void showAttributes(Object consumable) {
+	private static void showAttributes(Object consumable)  {
+
 		show("class is: " + consumable.getClass());
-	}
+        try {
+            Class myclass = Class.forName(consumable.getClass().getName());
+            String result = "{" + consumable.getClass().getSimpleName() + " ";
+            for (Field field : myclass.getDeclaredFields()){
+                field.setAccessible(true);
+                result += field.getName() + ":" + field.get(consumable)+", ";
+            }
+            result = result.substring(0, result.length()-2);
+            result+="}";
+            show(result);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 
 }

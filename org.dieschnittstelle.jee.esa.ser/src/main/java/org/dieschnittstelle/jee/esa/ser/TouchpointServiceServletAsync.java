@@ -51,7 +51,7 @@ public class TouchpointServiceServletAsync extends HttpServlet {
 
 	}
 	
-	/*
+
 	@Override	
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) {
@@ -81,7 +81,7 @@ public class TouchpointServiceServletAsync extends HttpServlet {
 		}
 
 	}
-	*/
+
 
 
 	
