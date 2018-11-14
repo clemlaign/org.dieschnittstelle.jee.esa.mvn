@@ -19,7 +19,7 @@ public class Milch {
 		this.menge = menge;
 	}
 
-	@DisplayAs(value="My Milch")
+	@DisplayAs("brandname")
 	public String getMarkenname() {
 		return markenname;
 	}
