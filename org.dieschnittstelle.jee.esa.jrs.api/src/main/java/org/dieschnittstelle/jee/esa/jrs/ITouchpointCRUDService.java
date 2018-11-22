@@ -10,7 +10,7 @@ import java.util.List;
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({MediaType.APPLICATION_JSON})
 public interface ITouchpointCRUDService {
-	
+
 	@GET
 	List<StationaryTouchpoint> readAllTouchpoints();
 
@@ -20,7 +20,7 @@ public interface ITouchpointCRUDService {
 
 	@POST
 	StationaryTouchpoint createTouchpoint(StationaryTouchpoint touchpoint);
-	
+
 	@DELETE
 	@Path("/{touchpointId}")
 	boolean deleteTouchpoint(@PathParam("touchpointId") long id);

@@ -1,8 +1,11 @@
 package org.dieschnittstelle.jee.esa.jrs;
 
-import java.util.List;
+import org.dieschnittstelle.jee.esa.entities.GenericCRUDExecutor;
+import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
-import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
+import javax.servlet.ServletContext;
+import javax.ws.rs.core.Context;
+import java.util.List;
 
 /*
 UE JRS2: implementieren Sie hier die im Interface deklarierten Methoden
@@ -10,36 +13,41 @@ UE JRS2: implementieren Sie hier die im Interface deklarierten Methoden
 
 public class ProductCRUDServiceImpl implements IProductCRUDService {
 
-	@Override
-	public IndividualisedProductItem createProduct(
-			IndividualisedProductItem prod) {
-		// TODO Auto-generated method stub
-		return null;
+	private GenericCRUDExecutor<AbstractProduct> serviceCRUD;
+
+	//constructeurs
+
+	public ProductCRUDServiceImpl(@Context ServletContext servletContext) {
+
+		// receive CRUD executor from servlet context
+		serviceCRUD = (GenericCRUDExecutor<AbstractProduct>)servletContext.getAttribute("productCRUD");
 	}
 
 	@Override
-	public List<IndividualisedProductItem> readAllProducts() {
-		// TODO Auto-generated method stub
-		return null;
+	public AbstractProduct createProduct(
+			AbstractProduct prod) {
+		return (AbstractProduct) serviceCRUD.createObject(prod);
 	}
 
 	@Override
-	public IndividualisedProductItem updateProduct(long id,
-			IndividualisedProductItem update) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<AbstractProduct> readAllProducts() {
+		return (List)serviceCRUD.readAllObjects();
+	}
+
+	@Override
+	public AbstractProduct updateProduct(long id,
+			AbstractProduct update) {
+        return (AbstractProduct) serviceCRUD.updateObject(update);
 	}
 
 	@Override
 	public boolean deleteProduct(long id) {
-		// TODO Auto-generated method stub
-		return false;
+        return serviceCRUD.deleteObject(id);
 	}
 
 	@Override
-	public IndividualisedProductItem readProduct(long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public AbstractProduct readProduct(long id) {
+        return (AbstractProduct) serviceCRUD.readObject(id);
 	}
 	
 }
