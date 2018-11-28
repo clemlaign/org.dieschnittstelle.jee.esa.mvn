@@ -1,9 +1,8 @@
-package org.dieschnittstelle.jee.esa.entities.erp;
+package org.dieschnittstelle.jee.esa.entities.erp.ws;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.GenericCRUDEntity;
-import org.dieschnittstelle.jee.esa.entities.erp.ws.ProductType;
 
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
