@@ -26,6 +26,8 @@ public class Constants {
 	public static final String TOUCHPOINT_ACCESS_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/TouchpointAccessStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemote";
 	public static final String TOUCHPOINT_ACCESS_ASYNC_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/TouchpointAccessStatelessAsync!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemoteAsync";
 	public static final String TRANSACTIONS_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CustomerTransactionCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDRemote";
+	public static final String STOCKITEM_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/StockSystemStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.StockSystemRemote";
+	public static final String PRODUCT_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/ProductCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.ProductCRUDRemote";
 
 	/*
 	 * the base url of the web api
