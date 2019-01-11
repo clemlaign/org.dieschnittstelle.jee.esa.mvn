@@ -5,12 +5,14 @@ import java.util.List;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
 import javax.ejb.Remote;
+import javax.ejb.Stateless;
 
 /*
  * TODO JPA3:
  * this interface shall be implemented using a stateless EJB with an EntityManager.
  * See TouchpointCRUDStateless for an example EJB with a similar scope of functionality
  */
+@Stateless
 @Remote
 public interface ProductCRUDRemote {
 

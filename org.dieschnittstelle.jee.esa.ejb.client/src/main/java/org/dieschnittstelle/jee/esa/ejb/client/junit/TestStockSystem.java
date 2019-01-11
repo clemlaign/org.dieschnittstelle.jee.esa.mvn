@@ -13,6 +13,7 @@ import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.show;
 import static org.junit.Assert.*;
 
 
@@ -45,6 +46,7 @@ public class TestStockSystem {
 
 		// determine initial number of products on stock from previous run
 		List<IndividualisedProductItem> initialProductsOnStock = stockSystemClient.getAllProductsOnStock();
+		show(initialProductsOnStock);
 		assertNotNull("all products on stock is not null", initialProductsOnStock);
 
 		// add to stock

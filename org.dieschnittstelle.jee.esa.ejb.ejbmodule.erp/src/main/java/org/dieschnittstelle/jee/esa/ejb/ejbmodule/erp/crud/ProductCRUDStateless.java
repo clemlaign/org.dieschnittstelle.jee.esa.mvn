@@ -2,11 +2,13 @@ package org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud;
 
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 @Stateless
+@Remote(ProductCRUDRemote.class)
 public class ProductCRUDStateless implements ProductCRUDRemote {
 
     @PersistenceContext(unitName = "erp_PU")

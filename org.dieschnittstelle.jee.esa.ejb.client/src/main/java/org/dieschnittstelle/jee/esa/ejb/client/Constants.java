@@ -26,7 +26,7 @@ public class Constants {
 	public static final String TOUCHPOINT_ACCESS_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/TouchpointAccessStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemote";
 	public static final String TOUCHPOINT_ACCESS_ASYNC_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/TouchpointAccessStatelessAsync!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemoteAsync";
 	public static final String TRANSACTIONS_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CustomerTransactionCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDRemote";
-	public static final String STOCKITEM_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/StockSystemStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.StockSystemRemote";
+	public static final String STOCKITEM_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/StockSystemSingleton!org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.StockSystemRemote";
 	public static final String PRODUCT_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/ProductCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.ProductCRUDRemote";
 
 	/*
@@ -78,12 +78,12 @@ public class Constants {
 				ProductType.PASTRY, 1080);
 		// PRODUCT_2.setId(2);
 
-		CAMPAIGN_1 = new Campaign();
+		CAMPAIGN_1 = new Campaign("Familienfrüstück");
 		// CAMPAIGN_1.setId(3);
 		CAMPAIGN_1.addBundle(new ProductBundle(PRODUCT_1, 5));
 		CAMPAIGN_1.addBundle(new ProductBundle(PRODUCT_2, 2));
 
-		CAMPAIGN_2 = new Campaign();
+		CAMPAIGN_2 = new Campaign("Kaffeerunde");
 		// CAMPAIGN_2.setId(4);
 		CAMPAIGN_2.addBundle(new ProductBundle(PRODUCT_2, 3));
 
@@ -102,7 +102,7 @@ public class Constants {
 
 	// this method resets all ids that might have been assigned to the objects
 	// referred to the constants after successful server-side creation
-	// note that in order for this to work, ids must have int type and must not
+	// note that in order for this to work, ids must have int or long type and must not
 	// be defaulted to any value different from 0 (e.g. -1)
 	public static void resetEntities() {
 		TOUCHPOINT_1.setId(0);
