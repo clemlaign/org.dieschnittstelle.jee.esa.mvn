@@ -28,6 +28,8 @@ public class Constants {
 	public static final String TRANSACTIONS_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CustomerTransactionCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDRemote";
 	public static final String STOCKITEM_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/StockSystemSingleton!org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.StockSystemRemote";
 	public static final String PRODUCT_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/ProductCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.ProductCRUDRemote";
+	public static final String SHOPPING_SESSION_FACADE_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ShoppingSessionFacadeStateful!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.shopping.ShoppingSessionFacadeRemote?stateful";
+
 
 	/*
 	 * the base url of the web api

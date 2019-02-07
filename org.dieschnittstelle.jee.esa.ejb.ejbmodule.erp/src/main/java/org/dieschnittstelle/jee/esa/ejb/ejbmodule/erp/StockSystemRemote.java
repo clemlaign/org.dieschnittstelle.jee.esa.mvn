@@ -1,11 +1,10 @@
 package org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp;
 
-import java.util.List;
-
 import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 
 import javax.ejb.Remote;
 import javax.jws.WebService;
+import java.util.List;
 
 /**
  * TODO JPA4:
@@ -13,7 +12,7 @@ import javax.jws.WebService;
  * local interface below, comments will give some hints at how the implementation could be done
  */
 @Remote
-@WebService
+@WebService(targetNamespace = "http://dieschnittstelle.org/jee/esa/jws")
 public interface StockSystemRemote {
 
 	/**

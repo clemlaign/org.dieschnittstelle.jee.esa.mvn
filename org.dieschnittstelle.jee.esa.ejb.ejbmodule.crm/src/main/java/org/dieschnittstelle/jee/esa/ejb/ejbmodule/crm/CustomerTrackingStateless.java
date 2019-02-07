@@ -1,23 +1,22 @@
 package org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.apache.logging.log4j.Logger;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDLocal;
+import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
+import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-
-import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDLocal;
-import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
-import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
-import org.apache.logging.log4j.Logger;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * allows read/write access to a customer's shopping history
  */
 @Stateless(name="customerTrackingSystem")
-public class CustomerTrackingStateless implements CustomerTrackingRemote {
+public class CustomerTrackingStateless implements CustomerTrackingRemote, org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CustomerTrackingLocal {
 
 	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(CustomerTrackingStateless.class);

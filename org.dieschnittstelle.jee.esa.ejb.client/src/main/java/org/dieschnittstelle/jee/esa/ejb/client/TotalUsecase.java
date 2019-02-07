@@ -1,11 +1,9 @@
 package org.dieschnittstelle.jee.esa.ejb.client;
 
-import static org.dieschnittstelle.jee.esa.ejb.client.Constants.*;
-
-import java.util.Collection;
-
 import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.*;
+import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingBusinessDelegate;
+import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingSession;
 import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingSessionFacadeClient;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CampaignTrackingRemote;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
@@ -17,10 +15,11 @@ import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.ProductCRUDRemote;
 import org.dieschnittstelle.jee.esa.entities.crm.CampaignExecution;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
-import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingBusinessDelegate;
-import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingSession;
 
-import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+import java.util.Collection;
+
+import static org.dieschnittstelle.jee.esa.ejb.client.Constants.*;
+import static org.dieschnittstelle.jee.esa.utils.Utils.step;
 
 public class TotalUsecase {
 
@@ -44,11 +43,11 @@ public class TotalUsecase {
 	private boolean stepping = true;
 	// allow to switch error provocation from outside via setting this attribute
 	// TODO: ADD4: set to true for testing ShoppingException, set to false for testing success-case for transactions
-	private boolean provokeErrorOnPurchase = false /*true*/;
+	private boolean provokeErrorOnPurchase = true /*true*/;
 
 	// TODO: PAT1: set to true for testing facade
 	// TODO: ADD4: set to true for testing success-case for transactions and ShoppingException
-	private boolean useShoppingSessionFacade = false /*true*/;
+	private boolean useShoppingSessionFacade = true /*true*/;
 
 	// declare the attributes that will be instantiated with the ejb clients - note that the attributes use the remote interface types
 	private ProductCRUDRemote productCRUD;

@@ -1,28 +1,13 @@
 package org.dieschnittstelle.jee.esa.entities.crm;
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.HashSet;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.PostLoad;
-import javax.persistence.PostPersist;
-import javax.persistence.PostRemove;
-import javax.persistence.PostUpdate;
-import javax.persistence.PrePersist;
-import javax.persistence.PreRemove;
-import javax.persistence.PreUpdate;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.logging.log4j.Logger;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.HashSet;
 
 /*
  * 
@@ -81,8 +66,8 @@ public class Customer implements Serializable {
 	/*
 	 * UE JPA1.2 
 	 */
-	@OneToMany(mappedBy="customer", fetch=FetchType.LAZY)
-	//@OneToMany(mappedBy="customer", fetch=FetchType.EAGER)
+	//@OneToMany(mappedBy="customer", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="customer", fetch=FetchType.EAGER)
 	// we also ignore this attribute (could be commented once eager loading is active)
 	@JsonIgnore
 	private Collection<CustomerTransaction> transactions;

@@ -1,12 +1,11 @@
 package org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp;
 
-import java.util.List;
-
-import javax.ejb.Local;
-
 import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 import org.dieschnittstelle.jee.esa.entities.erp.StockItem;
 
+import javax.ejb.Local;
+import java.util.List;
+@Local
 public interface StockSystemLocal {
 
 	/**

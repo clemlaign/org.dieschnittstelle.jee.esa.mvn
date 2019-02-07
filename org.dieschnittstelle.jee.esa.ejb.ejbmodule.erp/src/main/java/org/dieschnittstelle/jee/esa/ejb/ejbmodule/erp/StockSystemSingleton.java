@@ -16,7 +16,7 @@ import java.util.List;
 @Singleton
 @Remote(StockSystemRemote.class)
 @WebService(targetNamespace = "http://dieschnittstelle.org/jee/esa/jws", serviceName = "StockSystemWebService", endpointInterface = "org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.StockSystemRemote")
-public class StockSystemSingleton implements StockSystemRemote {
+public class StockSystemSingleton implements StockSystemRemote, StockSystemLocal {
 
     @EJB
     PointOfSaleCRUDLocal pointOfSaleCRUDLocal;
@@ -115,5 +115,10 @@ public class StockSystemSingleton implements StockSystemRemote {
             }
         }
         return listItems;
+    }
+
+    @Override
+    public List<StockItem> getCompleteStock() {
+        return null;
     }
 }
